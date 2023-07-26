@@ -222,6 +222,7 @@
 \DeclareOptionX{b4paper}       {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{250mm}{353mm}}%g
 \DeclareOptionX{b5paper}       {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{176mm}{250mm}}%g
 \DeclareOptionX{b6paper}       {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{125mm}{176mm}}%g
+\DeclareOptionX{Junlampaper}       {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{1200mm}{1300mm}}%g
 \DeclareOptionX{ansiapaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{8.5in}{11in}}%
 \DeclareOptionX{ansibpaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{11in}{17in}}%
 \DeclareOptionX{ansicpaper}    {\@geometryKnowsThisSizetrue\baposter@setfinalpapersize{17in}{22in}}%
