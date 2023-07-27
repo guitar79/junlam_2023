@@ -14,7 +14,7 @@
 %
 %  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
 %\documentclass[a0paper, portrait]{Julam_Korea}
-\documentclass[Junlampaper, portrait]{Julam_Korea}
+\documentclass[Junlampaper, portrait]{Julam_PosterK}
 \usepackage{kotex}
 \usepackage[english]{babel}
 \usepackage{helvet}
@@ -174,19 +174,22 @@
     \begin{tikzpicture}[remember picture, overlay, anchor=south west, inner sep=0pt]%
         \node at (-1.2, -0.65)  %(16.30, 18.40) 
                  {\includegraphics[width=\paperwidth, height=\paperheight]
-                {wallpaper/wallpaper.pdf}};
+                {wallpaper/wallpaper4.pdf}};
     % \end{tikzpicture}
     % \begin{tikzpicture}[remember picture, overlay]%
         %\node [draw, width=13cm, height=3cm, text=black] (abs) at (1.6, 28.2) 
             %{\tiny{해안, 연안 등을 소규모로 재현하여 연안 공학, 선박 공학 등의 분야와 관련된 모형 실험이 가능한 2차원 조파 수조를 제작하였다. 조파 수조는 수조 모듈, 조파기, 소파기, 파고계, 경사로(연안 모형)으로 구성된다. 수조 모듈은 길이 $2,000~\mathrm{mm}$, 폭 $300~\mathrm{mm}$, 높이 $400~\mathrm{mm}$이며 3개로 연결하여 길이 $6,000~\mathrm{mm}$로 구성하였다. 조파기는 구동부와 제어부로 나뉘며, 구동부는 리니어 엑츄에이터와 스텝 모터를 주 부품으로 하고, 이를 제어부의 틴시 보드 기반 컨트롤러로 제어한다. 개발한 아두이노 코드로 조파기를 구동시켜 여러 파를 발생시킬 수 있고, 이에 의한 맞춤형 파 생성이 가능하여 원하는 조건에 대한 모형 실험을 구현할 수 있다.}};
-        \node at (20.0, 26.6) 
-            {\includegraphics[width=13.1cm, height=3cm]
-                {images/Experiment_System_Crop}};
-        \node [draw=yellow, text=yellow] (TV1) at (22.0, 29.0) {\tiny{TV1}}; %at (가로, 세로)
-        \node [draw=yellow, text=yellow] (TV2) at (30.5, 28.8) {\tiny{TV2}};
-        \node [draw=yellow, text=yellow] (computer) at (20.6, 27.8) {\tiny{computer}};
-        \node [draw=yellow, text=yellow] (camera1) at (23.7, 27.5) {\tiny{camera1}};
-        \node [draw=yellow, text=yellow] (camera1) at (27.7, 27.5) {\tiny{camera2}}; 
+        \node at (4.5, 30.3) 
+            {\includegraphics[width=4cm, height=4cm]
+                {images/gshslogo1.png}};
+        \node [inner sep=0pt] at (30.2, 26.6) 
+            {\includegraphics[width=3cm, height=3cm]
+                {./images/gshslogo.png}};
+        
+        \node [text=green] (students) at (20.5, 28.6) {\bf \LARGE{출 품 자 : }}; %at (가로, 세로)
+        \node [text=black] (studentsname) at (23.5, 28.6) {\bf \LARGE{남도현, 백효송, 이시현}}; 
+        \node [text=green] (advisor) at (20.5, 27.2) {\bf \LARGE{지도교사: }};
+        \node [text=black] (advisorname) at (23.5, 27.2) {\bf \LARGE{박 기 현}};
     \end{tikzpicture}
 }
 % if you want to reduce the space before and after equations, use and adjust
@@ -201,7 +204,7 @@
   %general options for the poster
   grid=false,
   columns=4,
-  colspacing=4mm,
+  colspacing=3mm,
   headerheight=0.33\textheight,
   background=user,
 %  bgColorOne=red!42, %is used when background != user and none
@@ -226,31 +229,33 @@
 %the Eye Catcher (the logo on the left)
 {
   % This can be commented out or replaced by a company/department logo
-  %\includegraphics[height=0.5\headerheight]{images/gshslogo1.png}
+  %\includegraphics[height=0.3\headerheight]{images/gshslogo1.png}
 }
 %the poster title
-% {\color{white}\bf \Large
-% 제69회 경기도과학전람회 $~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$      
-% }
-%the author(s)
-{\qquad \qquad \color{blue}\HUGE{연안 환경 모형 실험을 위한 2차원 조파 수조 제작 }}
-%the logo (the logo on the right)
 {
-  % This can be commented out or replaced by a company/department logo
-  %\includegraphics[height=0.75\headerheight]{./logo/gshslogo.png}
+%\vspace{-10em} \quad \quad \color{blue}\HUGE{연안 환경 모형 실험을 위한 2차원 조파 수조 제작}
 }
+%the author(s)
+%{
+ %{}
+%}
+%the logo (the logo on the right)
+%{
+  % This can be commented out or replaced by a company/department logo
+  %\includegraphics[height=0.3\headerheight]{./logo/gshslogo.png}
+%}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The actual content of the poster begins here
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{posterbox}[name=abstra,span=2,column=0,row=0]{Abstract}
-  \scriptsize{
-  해안, 연안 등을 소규모로 재현하여 연안 공학, 선박 공학 등의 분야와 관련된 모형 실험이 가능한 2차원 조파 수조를 제작하였다. 조파 수조는 수조 모듈, 조파기, 소파기, 파고계, 경사로(연안 모형)으로 구성된다. 수조 모듈은 길이 $2,000~\mathrm{mm}$, 폭 $300~\mathrm{mm}$, 높이 $400~\mathrm{mm}$이며 3개로 연결하여 길이 $6,000~\mathrm{mm}$로 구성하였다. 조파기는 구동부와 제어부로 나뉘며, 구동부는 리니어 엑츄에이터와 스텝 모터를 주 부품으로 하고, 이를 제어부의 틴시 보드 기반 컨트롤러로 제어한다. 개발한 아두이노 코드로 조파기를 구동시켜 여러 파를 발생시킬 수 있고, 이에 의한 맞춤형 파 생성이 가능하여 원하는 조건에 대한 모형 실험을 구현할 수 있다.
-  }
-\end{posterbox}
+% \begin{posterbox}[name=abstra,span=2,column=0,row=0]{Abstract}
+%   \scriptsize{
+%   해안, 연안 등을 소규모로 재현하여 연안 공학, 선박 공학 등의 분야와 관련된 모형 실험이 가능한 2차원 조파 수조를 제작하였다. 조파 수조는 수조 모듈, 조파기, 소파기, 파고계, 경사로(연안 모형)으로 구성된다. 수조 모듈은 길이 $2,000~\mathrm{mm}$, 폭 $300~\mathrm{mm}$, 높이 $400~\mathrm{mm}$이며 3개로 연결하여 길이 $6,000~\mathrm{mm}$로 구성하였다. 조파기는 구동부와 제어부로 나뉘며, 구동부는 리니어 엑츄에이터와 스텝 모터를 주 부품으로 하고, 이를 제어부의 틴시 보드 기반 컨트롤러로 제어한다. 개발한 아두이노 코드로 조파기를 구동시켜 여러 파를 발생시킬 수 있고, 이에 의한 맞춤형 파 생성이 가능하여 원하는 조건에 대한 모형 실험을 구현할 수 있다.
+%   }
+% \end{posterbox}
 
-\begin{posterbox}[name=intro,column=0,below=abstra]{서론}
+\begin{posterbox}[name=intro,column=0]{서론}
     \small {1. 제작 동기 \\}
         \scriptsize {연구를 계획하던 중 모형 실험을 위하여 연안 모형과 이곳에 해파를 발생시키는 장치가 필요하게 되었다. 선행 연구를 조사해 보니 연안 등 다양한 조건에서 해양 현상의 모의 실험은 조파 수조를 이용하여 할 수 있다는 것을 알게 되었다\cite{chung2013}.\\}
 
@@ -316,19 +321,22 @@
 
 \end{posterbox}
 
-\begin{posterbox}[name=wtank,span=2,column=2,row=0] {작품 설명: A. 2차원 조파 수조 (길이 확장 가능)}
-\begin{figure}[H]
+\begin{posterbox}[name=wtank,span=2,column=1,row=0] {작품 설명: A. 2차원 조파 수조 (길이 확장 가능)}
+%\begin{figure}[H]
         \includegraphics[width=\textwidth]{images/Experiment_System_Crop}
-        \caption{완성된 조파수조의 모습}
-        \label{Experimnet_System} 
+        \captionof{figure}{완성된 조파수조의 모습}
+        
+ %       \label{Experimnet_System} 
         \begin{tikzpicture} [remember picture, overlay, anchor=north west]
             \node [draw=yellow, text=yellow] (TV1) at (2.4, 5.8) {\scriptsize{TV1}};
             \node [draw=yellow, text=yellow] (TV2) at (12.4, 5.5) {\scriptsize{TV2}};
             \node [draw=yellow, text=yellow] (computer) at (1.0, 4) {\scriptsize{computer}};
             \node [draw=yellow, text=yellow] at (4.6, 2.6) {\scriptsize{camera1}};
             \node [draw=yellow, text=yellow] at (9.5, 2.5) {\scriptsize{camera2}}; 
-        \end{tikzpicture}	        
-\end{figure} 
+        \end{tikzpicture}
+        %\captionof{figure}{\scriptsize 완성된 조파 수조의 모습} %\\[0.5em]\
+%\end{figure}
+\newline
 \scriptsize 제작한 작품은 '2차원 조파 수조'로 명명하였다. 이 조파 수조를 이용하여 실험을 할때 제대로 진행이 되려면 조파기, 소파기, 파고계, 해안 경사로 등이 제 역할을 해 주어야 가능하다. 따라서 각 부분은 실험 목적에 따라 조립과 분해가 가능하도록 따로 제작하였다. 제작한 조파 수조의 특징을 나열하면 다음과 같다.
 \begin{itemize}
     \item 폭 $300~\mathrm{mm}$, 높이 $400~\mathrm{mm}$, 총 길이 $6,000~\mathrm{mm}$의 2차원 조파 수조를 제작하였다. 폭과 높이를 맞추어 수조 모듈을 추가로 제작하여 연결하면 얼마든지 길이를 확장할 수 있다. 
@@ -413,7 +421,7 @@
     
 \end{posterbox}
 
-\begin{posterbox}[name=result,column=2,below=wtank]{RESULT}
+\begin{posterbox}[name=result,column=3,]{결론  }
 
 \small {1. 조파기 특성\\}
     \scriptsize{
@@ -593,7 +601,7 @@
     \end{figure}    
 \end{posterbox}
 
-\begin{posterbox}[name=refs,column=2,below=result,above=bottom]{참고문헌}
+\begin{posterbox}[name=refs,column=3,below=result]{참고문헌}
 %\scriptsize
 \tiny
 \bibliographystyle{IEEEtran}

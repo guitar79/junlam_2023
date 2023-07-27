@@ -1,0 +1,58 @@
+%\maketitle  % command to print the title page with above variables
+\makecover  % command to print the title page with above variables
+
+\setcounter{page}{1}
+\renewcommand{\thepage}{\roman{page}}
+
+%----------------------------------------------
+%   Table of Contents (자동 작성됨)
+%----------------------------------------------
+\cleardoublepage
+\addcontentsline{toc}{section}{Contents}
+\setcounter{secnumdepth}{3} % organisational level that receives a numbers
+\setcounter{tocdepth}{3}    % print table of contents for level 3
+\baselineskip=2.2em
+\tableofcontents
+
+
+%----------------------------------------------
+%     List of Figures/Tables (자동 작성됨)
+%----------------------------------------------
+\cleardoublepage
+\clearpage
+\listoffigures	% 그림 목록과 캡션을 출력한다. 만약 논문에 그림이 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+\cleardoublepage
+\clearpage
+\listoftables  % 표 목록과 캡션을 출력한다. 만약 논문에 표가 없다면 이 줄의 맨 앞에 %기호를 넣어서 코멘트 처리한다.
+
+
+\cleardoublepage
+\clearpage
+
+%---------------------------------------------------------------------
+%                  영문 초록을 입력하시오
+%---------------------------------------------------------------------
+%\begin{abstracts}     %this creates the heading for the abstract page
+%	\addcontentsline{toc}{section}{Abstract}  %%% TOC에 표시
+%	\noindent{
+%			Put your abstract here. Once upon a time, \gshs said : `The first, and the best.'
+%	}
+%\end{abstracts}
+
+%\cleardoublepage
+%\clearpage
+
+\begin{abstractskor}
+	\addcontentsline{toc}{section}{초록}  %%% TOC에 표시
+	\noindent{
+		
+	본 연구에서는 해안, 연안 등을 소규모로 재현하여 연안 공학, 선박 공학 등과 관련된 모형 실험을 할 수 있는 2차원 조파 수조를 제작하였다. 조파 수조는 수조를 기본으로 하여 조파기, 소파기, 파고계, 해안 경사 등의 부분으로 구성되어 있다. 수조는 길이 $2,000~\mathrm{mm}$, 폭 $300~\mathrm{mm}$, 높이 $400~\mathrm{mm}$인 수조 모듈로 구성되어 있으며 3개를 연결하여 총 길이 $6,000~\mathrm{mm}$로 제작되었고 모듈을 추가하여 확장할 수 있다. 조파기는 리니어 엑츄에이터의 스텝 모터를 틴지 보드 기반의 컨트롤러로 제어하여 아두이노 코드로 여러 종류의 파를 만들어 낼 수 있어 다양한 모형 실험을 구현할 수 있다. 제작된 조파수조는 쓰나미에 의한 피해, 파력 발전의 효율, 효과 적인 방파제, 선박의 안정성 등을 알아보는 모형 실험에 적용할 수 있을 것으로 생각된다. 
+	}
+\end{abstractskor}
+
+
+
+
+
+

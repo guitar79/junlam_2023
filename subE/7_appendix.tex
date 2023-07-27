@@ -1,0 +1,92 @@
+\section{부록: Arduino Code for Wave Maker}
+
+\subsection*{move.ino}
+\begin{minted}[frame=lines, linenos, fontsize=\scriptsize]
+{arduino}
+void vel(int V){
+  Serial.println("limitCheck");
+  if(limitCheck(V)){
+    float delta = V/MaxSpeed;
+    delta = min(1.0f,max(-1.0f,delta));
+    rotatecontrol.overrideSpeed(delta);
+  }
+  else vel(0);
+}
+boolean limitCheck(int V){
+  if(analogRead(lmtPin1)<10&&V>0){
+    rotatecontrol.overrideSpeed(0);
+    return false;
+  }
+  if(analogRead(lmtPin2)<10&&V<0){
+    rotatecontrol.overrideSpeed(0);
+    return false;
+  }
+  return true;
+}
+
+void initializeMotor(){
+  int V = 5000;
+  while(limitCheck(V)){
+    vel(V);
+  }
+  vel(0);
+  leftEnd = motor.getPosition();
+  delay(300);
+  while(limitCheck(-V)){
+    vel(-V);
+  }
+  rightEnd = motor.getPosition();
+  vel(0);
+  MID = (leftEnd+rightEnd)/2;
+  gotoMiddle();
+  Serial.println(leftEnd);
+  Serial.println(rightEnd);
+}
+void gotoMiddle(){
+    while(motor.getPosition()<MID){
+      vel(5000);
+    }
+    vel(0);
+    while(motor.getPosition()>MID){
+      vel(-5000);
+    }
+    vel(0);
+}
+\end{minted}
+
+
+\subsection*{sin\_wave.ino}
+\begin{minted}[frame=lines, linenos, fontsize=\scriptsize]
+{arduino}
+int cmtostep = 400;
+int A = 15;
+int N = 50;
+float w = 0;
+
+void sin_set(float k,int a){
+  Serial.println("sin set called");
+  waveset = true;
+  A = a;
+  A*=400;
+  w = k*PI;
+   while(motor.getPosition()<MID+A){
+    vel(5000);
+  }
+  vel(0);
+  delay(5000);
+  timer = 0;
+  intervalTimer = 0;
+}
+void sinWave(){
+  if(intervalTimer>N){
+    intervalTimer = 0;
+    float n_speed = (sinmillis(timer+N)-sinmillis(timer))/((float)N/1000);
+    vel(n_speed);
+    Serial.println(n_speed);
+  }
+}
+float sinmillis(float T){
+  NUM(0);
+  return A*cos(w*T/1000);
+}
+\end{minted}
