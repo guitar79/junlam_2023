@@ -107,7 +107,7 @@
 %%
 %%
 %% Licence: GPL
-\ProvidesClass{Julam_PosterK}[2011/11/26 v2.0 baposter class]
+\ProvidesClass{Junlam_PosterK}[2011/11/26 v2.0 baposter class]
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \LoadClass{article}
 \typeout{baposter: Brian Amberg, 2007, 2008, 2009, 2010, 2011 | http://www.brian-amberg.de/uni/poster/}
