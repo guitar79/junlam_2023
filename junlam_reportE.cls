@@ -88,7 +88,7 @@
 \usepackage{titlesec}
 \usepackage{cite}   % citation [1,2,3] --> [1-3]
 
-\bibliographystyle{junlam_report}
+\bibliographystyle{junlam_reportE}
 %\usepackage[numbers,sort&compress]{natbib}
 %\setlength{\bibsep}{0em}
 %\bibliographystyle{gshs_thesisnat}
@@ -418,7 +418,7 @@
 
 %헤딩 재설정
 \renewcommand{\contentsname}{%
-\if@isKorean 목 차       \else  목 차       \fi}
+\if@isKorean 목 차       \else 목 차       \fi}
 \renewcommand{\listfigurename}{%
 \if@isKorean 그 림 목 차 \else 그 림 목 차 \fi}
 \renewcommand{\listtablename}{%
