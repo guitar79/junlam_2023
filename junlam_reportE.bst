@@ -1,4 +1,4 @@
-% BibTeX bibliography style `gshs_report'
+% BibTeX bibliography style `gshs_thesis'
 % version 0.99a for BibTeX versions 0.99a or later, LaTeX version 2.09.
 % Copyright (C) 1985, all rights reserved.
 % Copying of this file is authorized only if either
@@ -571,7 +571,7 @@ FUNCTION {format.pages}
 FUNCTION {format.vol.num.pages}
 { number empty$
     { volume empty$
-       'skip$
+       { "" }
        { "{\em " volume * "}" * }
 %	   { "\underline{" volume * "}" * }
       if$
