@@ -247,7 +247,8 @@
 	\vskip 1cm
 	\noindent\begin{minipage}[t]{\textwidth}
 		\begin{center}
-			\fontsize{24pt}{24pt}\selectfont  제\@junlam회 전국과학전람회 \\[24pt]
+			\fontsize{24pt}{24pt}\selectfont 제\@junlam회 전국과학전람회 \\ 
+                                학생작품지도논문연구대회 \\ [24pt]
 		\end{center}
 	\end{minipage}
  
@@ -297,16 +298,16 @@
                     \draw (0mm, 10mm) -- (108mm, 10mm);
                     \draw (0mm, 20mm) -- (108mm, 20mm);
                     \draw (0mm, 30mm) -- (108mm, 30mm);
-                    \draw (0mm, 40mm) -- (108mm, 40mm);
-                    \draw (42mm, 0mm) -- (42mm, 40mm);
-                    \draw (0mm, 0mm) -- (0mm, 40mm);
-                    \draw (108mm, 0mm) -- (108mm, 40mm);
-				\node(field3) at (21mm, 35mm) {\fontsize{13pt}{13pt}\selectfont 출품학생};
-				\node(name) at (75mm, 35mm) {\fontsize{13pt}{13pt}\selectfont \@studentnames };
-				\node(student) at (21mm, 25mm) {\fontsize{13pt}{13pt}\selectfont 지도교원};
+                    %\draw (0mm, 40mm) -- (108mm, 40mm);
+                    \draw (42mm, 0mm) -- (42mm, 30mm);
+                    \draw (0mm, 0mm) -- (0mm, 30mm);
+                    \draw (108mm, 0mm) -- (108mm, 30mm);
+				%\node(field3) at (21mm, 35mm) {\fontsize{13pt}{13pt}\selectfont 출품학생};
+				%\node(name) at (75mm, 35mm) {\fontsize{13pt}{13pt}\selectfont \@studentnames };
+				\node(student) at (21mm, 25mm) {\fontsize{13pt}{13pt}\selectfont 출품교원};
                     \node(name) at (75mm, 25mm) {\fontsize{13pt}{13pt}\selectfont \@advisor };
-				\node(teacher) at (21mm, 15mm) {\fontsize{13pt}{13pt}\selectfont 출품분야};
-                \node(name) at (75mm, 15mm) {\fontsize{13pt}{13pt}\selectfont \@entryfield };
+				\node(teacher) at (21mm, 15mm) {\fontsize{13pt}{13pt}\selectfont 지도학생};
+                \node(name) at (75mm, 15mm) {\fontsize{13pt}{13pt}\selectfont \@studentnames };
                 \node(teacher) at (21mm, 5mm) {\fontsize{13pt}{13pt}\selectfont 출품부분};
                 \node(name) at (75mm, 5mm) {\fontsize{13pt}{13pt}\selectfont \@entrysection };
 			\end{tikzpicture}
