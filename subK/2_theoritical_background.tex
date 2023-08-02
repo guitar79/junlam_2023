@@ -24,16 +24,16 @@
         \includegraphics[height=3cm]{images/Wave_Maker(Piston).jpg}
     \end{center}
         \begin{tikzpicture} [remember picture, overlay]
-            \node at (1.7, 1.0) {\scriptsize{(a) flap type}};
-            \node at (7.6, 1.0) {\scriptsize{(b) piston type}};
+            \node at (3.2, 1.0) {\scriptsize{(a) 플랩형}};
+            \node at (9.0, 1.0) {\scriptsize{(b) 피스톤형}};
         \end{tikzpicture}
-        \caption{Various types of 2-dimensional wavemaker - (a) flap type (b) piston type}
+        \caption{다양한 종류의 2차원 조파기 - (a) 플랩형 (b) 피스톤형}
         \label{Experimnet_System} 
 \end{figure}
 
 \subsection{조파 이론(wave maker theory)}
 
-조파 이론은 여러 종류의 조파기가 발생하는 파도의 특성과 개형을 알아보는 것을 목표로 한다\cite{dean1991water} \cite{zhang2007deterministic} \cite{ojk2018}.
+조파 이론은 여러 종류의 조파기가 발생하는 파도의 특성과 개형을 알아보는 것을 목표로 한다\cite{zhang2007deterministic} \cite{ojk2018}.
 2차원 조파 수조에서 피스톤형 조파기가 발생시키는 파도는 여러 방정식을 통해 구할 수 있다. 제일 보편적인 방식은 속도 퍼텐셜 $\phi(x, y, z, t)$를 정의하고 이에 대한 라플라스 방정식과 여러 경계조건을 적용하는 것이다. 방정식을 풀면 속도 퍼텐셜은 다음과 같이 정해진다.
 
 \begin{equation} \label{eq:1}
@@ -91,7 +91,7 @@ $S_0,~h$는 구조적인 값이며 조절이 가능하다. 또, 파수 $k$와 �
 }
 \end{equation}
 
-하지만 이는 심해파의 경우이다. 여러 경계조건과 근사를 하기 위한 조건이며 심해파는 간단하게 $h/\lambda > 1/2$인 파를 의미하기도 한다. 이와 반대로 천해파는 $h/\lambda < 1/20$인 파를 의미하며 상대적으로 얕은 바다에서 생기며 파가 진행하면서 부서진다. 그렇기 때문에 이론적으로 파의 개형을 해석적으로 유도하기는 거의 불가능하며 대부분의 선행연구는 섭동이론을 적용하거나 2차까지 근사를 하는 등 비선형으로 방정식을 수치해석한다\cite{society1993laboratory}. 
+하지만 이는 심해파의 경우이다. 여러 경계조건과 근사를 하기 위한 조건이며 심해파는 간단하게 $h/\lambda > 1/2$인 파를 의미하기도 한다. 이와 반대로 천해파는 $h/\lambda < 1/20$인 파를 의미하며 상대적으로 얕은 바다에서 생기며 파가 진행하면서 부서진다. 그렇기 때문에 이론적으로 파의 개형을 해석적으로 유도하기는 거의 불가능하며 대부분의 선행연구는 섭동이론을 적용하거나 2차까지 근사를 하는 등 비선형으로 방정식을 수치해석한다 \cite{society1993laboratory}. 
 
 \subsection{소파 장치(wave absorber)}
 파는 수조 내부에서 전달되며 진행파와 주변 장애물에 부딫혀 반사된 반사파로 나뉜다. 중첩의 원리에 의하여 수면파는 진행파와 반사에 의한 정상파의 선형 결합으로 표현되며 정상파가 주요 오차의 원인이 된다. 소파기는 반사파가 생기지 않도록 해주는 장치로 능동형 소파 장치(active wave absorber)\와 수동형 소파 장치(passive wave absorber)로 나뉜다\cite{ouellet1986survey}.
@@ -102,7 +102,7 @@ $S_0,~h$는 구조적인 값이며 조절이 가능하다. 또, 파수 $k$와 �
 
 %\subsubsection{수동형 소파기(passive wave absorber)}
 
-수동형 소파 장치는 추가적인 구조물을 설치하여 반사파의 에너지를 최소화하는 것을 목적으로 한다. 능동형 소파 장치와 달리 아무리 최적화를 해도 반사파가 존재하며 horsehair, crushed rock 등 여러 구조가 있다. 특히, 파를 효과적으로 소멸시키기 위해 다공성 판을 이용하며 공극률에 따른 반사계수 비교 등 다공성 구조 관련 연구가 많으며 이미 그 효율성이 입증되었다\cite{lim2014optimum, o2017methods}. 또, 경사로를 이용하기도 하는데 이는 주로 3D 조파 수조에서 파를 관찰하려는 영역이 아닌 다른 부분에서 최대한 상쇄시키기 위함이다. 경사로는 위로 볼록한 포물면을 띄는 경우가 제일 반사계수가 낮음이 밝혀졌다. 본 연구에서는 수동형 소파기를 사용할 것이다.
+수동형 소파 장치는 추가적인 구조물을 설치하여 반사파의 에너지를 최소화하는 것을 목적으로 한다. 능동형 소파 장치와 달리 아무리 최적화를 해도 반사파가 존재하며 horsehair, crushed rock 등 여러 구조가 있다. 특히, 파를 효과적으로 소멸시키기 위해 다공성 판을 이용하며 공극률에 따른 반사계수 비교 등 다공성 구조 관련 연구가 많으며 이미 그 효율성이 입증되었다\cite{lim2014optimum} \cite{o2017methods}. 또, 경사로를 이용하기도 하는데 이는 주로 3D 조파 수조에서 파를 관찰하려는 영역이 아닌 다른 부분에서 최대한 상쇄시키기 위함이다. 경사로는 위로 볼록한 포물면을 띄는 경우가 제일 반사계수가 낮음이 밝혀졌다. 본 연구에서는 수동형 소파기를 사용할 것이다.
 
 \subsection{파고계(wave gauge)}
 

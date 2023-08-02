@@ -2,12 +2,19 @@
 
 \subsection{조파 수조 개관}
 
-\begin{figure}[htbp]
-	\begin{center}
-		\includegraphics[width=\textwidth]{sujo.jpg}
-		\caption{완성된 2차원 조파 수조의 모습}
-		\label{Wavetank}
-	\end{center}
+\begin{figure}[H]
+        \includegraphics[width=\textwidth]{images/Experiment_System_Crop}
+        \captionof{figure}{완성된 조파수조의 모습}
+        
+ %       \label{Experimnet_System} 
+        \begin{tikzpicture} [remember picture, overlay, anchor=north west]
+            \node [draw=yellow, text=yellow] (TV1) at (2.5, 5.8) {\scriptsize{TV1}};
+            \node [draw=yellow, text=yellow] (TV2) at (14, 5.5) {\scriptsize{TV2}};
+            \node [draw=yellow, text=yellow] (computer) at (1.0, 4) {\scriptsize{computer}};
+            \node [draw=yellow, text=yellow] at (4.6, 2.6) {\scriptsize{camera1}};
+            \node [draw=yellow, text=yellow] at (9.5, 2.5) {\scriptsize{camera2}}; 
+        \end{tikzpicture}
+        %\captionof{figure}{\scriptsize 완성된 조파 수조의 모습} %\\[0.5em]\
 \end{figure}
  
 제작한 작품은 '2차원 조파 수조'로 명명하였다. 이 조파 수조를 이용하여 실험을 할때 제대로 진행이 되려면 조파기, 소파기, 파고계, 해안 경사로 등이 제 역할을 해 주어야 가능하다. 따라서 각 부분은 실험 목적에 따라 조립과 분해가 가능하도록 따로 제작하였다. 제작한 조파 수조의 특징을 나열하면 다음과 같다.
@@ -63,19 +70,77 @@
 	\end{center}
 \end{figure}
 
-\subsection{조파기 제작 및 검증}
-% \subsection{조파기}
+
+\subsection{방파제 모형}
+현재 해안 모형은 경사로로 두었다. 하지만 경사로를 앞으로 이동시키고 뒷부분의 공간에 평지를 두면 구조물을 설치할 수 있다. 여기에 파력 발전 시설을 두어 여러 발전 시스템의 효율 비교 및 최적화 연구를 진행할 수도 있고 구조물의 내구성 실험을 할 수도 있다. 나아가 경사로의 경사로 변화시켜 여러 환경에서 다양한 실험을 진행할 수 있다. 또, 경사로를 받치는 부품이 녹슬었는데 이는 다른 재료로 대체하거나 경사로를 판을 덧대는 것이 아닌 일체형으로 만들어 관리가 쉽게 할 예정이다.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[height=5.5cm]{images/Breakwater.jpg}
+    \includegraphics[height=5.5cm]{images/Breakwater(Illustrated).jpg}
+    \caption{방파제 모형(왼쪽)과 규격(오른쪽)}
+    \label{Braekwater}
+\end{figure}
+
+규격 $D3=1.2\mathrm{~cm}, D2=1.7\mathrm{~cm}, S=5.3\mathrm{~cm}, F=5\mathrm{~cm}$의 방파제 모형을 이용한 연구를 진행할 예정이다. 방파제의 조적 구조는 Gurer의 구조, Fabiao의 구조 등 여러 종류가 있으며 구조의 종류 및 스케일에 대한 방파 효과를 비교할 수도 있다\cite{article}.
+
+
+
+
+\subsection{조파기}
 
 %조파기 설계도를 넣어야 하는가? (넣는다면 다시 그릴 필요가 있음. 이전에 그렸던 것은 비율도 맞지 않고 전체적인 모습을 나타내지 못 함)
 
 %조파기 사진
-
 조파기는 구동부와 제어부로 나뉜다. 구동부는 조파기의 기계적인 부분으로 실질적인 움직임을 담당하며 리니어 액츄에이터와 이를 고정할 여러 부품으로 구성되어 있다. 제어부는 모터의 회전을 제어하는 부분으로 모터 드라이버와 틴지 보드 3.2(Teensy Board)로 구성되어 있다.
 
-%\subsubsection{구동부}
+\subsubsection{구동부}
 구동부는 $80\mathrm{~cm}$ 길이의 리니어 액츄에이터(linear actuator)를 메인 부품으로 하여 알루미늄 프로파일 프레임을 만들었다. 리니어 액츄에이터의 운동부에는 아크릴 재질의 조파판을 달았다. 조파판이 조파 수조 내부에 들어가도록 구동부를 수조 위에 설치하였다. 아크릴 판이 조파판이며 규격은 $280\mathrm{~mm} ~\times~ 295\mathrm{~mm} ~\times~5\mathrm{~mm}$로 수조 내부 공간에 딱 들어맞게 제작하였다. 조파판이 수조 내부의 벽과 최대한 밀착되어 있어야 정교한 파를 생성할 수 있다. 리니어 액츄에이터의 이동부에 붙어 수조 내부를 수평적으로 이동하며 물을 밀어내고 파를 생성한다. 액츄에이터는 FUYU 사의 FSK80 시리즈 제품으로 가동범위(stroke)는 $80\mathrm{~cm}$이고 최대 힘 $40\mathrm{~N}$, 최대 속력 $23\mathrm{~cm/s}$을 낼 수 있다(표 \ref{Specification of Linear Actuator}).
 
+% \begin{figure}[H]
+%     \begin{minipage}[t]{.3\linewidth}
+%     \begin{center}
+%         \scalebox{-1}[1]{\includegraphics[width = 3cm]{images/Linear_Actuator.jpg}}
+%         \includegraphics[width = 3cm]{images/Linear_Actuator(Design).jpg}
+%     \end{center}
+%         \begin{tikzpicture} [remember picture, overlay]
+%         \node at (2.0, 11.0) {(a)};
+%         \node at (2.0, 7.6) {(b)}; %1.1
+%         \end{tikzpicture}	
+%         %\caption{Linear actuator - (a) \textit{FSK80} series (b) Design}
+%         \caption{(a) FUYU사의 FSK80 시리즈 리니어 액츄에이터, (b) 제원}
+%         \label{linear actuator}
+%     \centering
+%   \end{minipage}\hfill
+  
+%   \begin{minipage}[t]{.6\linewidth}
+%     \centering
+%     \captionsetup{justification=centering}
+%     \caption{리니어 액츄에이터의 스펙}
+%     \begin{tabular}{l|l}
+%         \hline
+%         guide width $(\mathrm{mm})$                       & 80                                     \\
+%         repeat position accuracy $(\mathrm{mm})$          & $\pm$0.02                                 \\
+%         motor                                  & stepper 60102                          \\
+%         % rail model                             & dual rail W12 $\times$ H8              \\
+%         % ball screw model                       & 16                                     \\
+%         \textbf{stroke $(\mathrm{mm})$}                  & \textbf{50 - 1000}                                    \\
+%         pitch                                  & 10                                     \\
+%         \textbf{horizontal full payload speed $(\mathrm{mm/s})$}   & \textbf{230}                                    \\
+%         vertical full payload speed $(\mathrm{mm/s})$     & 60                                     \\
+%         side mounting payload speed $(\mathrm{mm/s})$     & 210                                    \\
+%         \textbf{rated horizontal payload $(\mathrm{kg})$}          & \textbf{40}                                     \\
+%         rated vertical payload $(\mathrm{kg})$            & 20                                     \\
+%         rated side mounting payload $(\mathrm{kg})$       & 15                                     \\
+%         noisy without payload $(\mathrm{db})$             & 79                                     \\
+%         rated payload noisy $(\mathrm{db})$               & 70                                     \\
+%         \textbf{acceleration } $(\mathrm{mm/s}^{2})$   & \textbf{500}                                    \\ \hline
+%     \end{tabular}%
+%     \label{Specification of Linear Actuator}
+%   \end{minipage}
+% \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{figure}[H]
     \begin{center}
         \scalebox{-1}[1]{\includegraphics[width = 12cm]{images/Linear_Actuator.jpg}}
@@ -89,16 +154,15 @@
         \caption{(a) FUYU사의 FSK80 시리즈 리니어 액츄에이터, (b) 제원}
         \label{linear actuator}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{figure}[H]
-    \centering
-    \captionsetup{justification=centering}
-    \includegraphics[width = 6cm]{images/Limit_Switch.jpg}
-    \caption{Limit Switch}
-    \label{limit switch}
-\end{figure}
-
-
+% \begin{figure}[H]
+%     \centering
+%     \captionsetup{justification=centering}
+%     \includegraphics[width = 6cm]{images/Limit_Switch.jpg}
+%     \caption{Limit Switch}
+%     \label{limit switch}
+% \end{figure}
 
 % \begin{figure}
 %     \centering
@@ -107,7 +171,47 @@
 %     \label{Linear Actuator}
 % \end{figure}
 
-%액츄에이터의 스펙을 넣어야 하는가
+\begin{figure}
+    \begin{minipage}[b]{.45\linewidth}
+        \centering
+        \scalebox{-1}[1]{\includegraphics[width = 0.45\linewidth]{images/Linear_Actuator.jpg}}
+        \includegraphics[width = 6cm]{images/Linear_Actuator(Design).jpg}
+        % \begin{tikzpicture} [remember picture, overlay]
+        %     \node at (2.0, 11.0) {(a)};
+        %     \node at (2.0, 7.6) {(b)}; %1.1
+        % \end{tikzpicture}	
+        %\caption{Linear actuator - (a) \textit{FSK80} series (b) Design}
+        \captionof{figure}{FUYU사의 FSK80 시리즈 리니어 액츄에이터}
+        \label{linear actuator}
+    \end{minipage}\hfill
+    
+    \begin{minipage}[b]{.45\linewidth}
+        \resizebox{\columnwidth}{!}{
+        \begin{tabular}{l|l}
+            \hline
+            guide width $(\mathrm{mm})$                       & 80                                     \\
+            repeat position accuracy $(\mathrm{mm})$          & $\pm$0.02                                 \\
+            motor                                  & stepper 60102                          \\
+            % rail model                             & dual rail W12 $\times$ H8              \\
+            % ball screw model                       & 16                                     \\
+            \textbf{stroke $(\mathrm{mm})$}                  & \textbf{50 - 1000}                                    \\
+            pitch                                  & 10                                     \\
+            \textbf{horizontal full payload speed $(\mathrm{mm/s})$}   & \textbf{230}                                    \\
+            vertical full payload speed $(\mathrm{mm/s})$     & 60                                     \\
+            side mounting payload speed $(\mathrm{mm/s})$     & 210                                    \\
+            \textbf{rated horizontal payload $(\mathrm{kg})$}          & \textbf{40}                                     \\
+            rated vertical payload $(\mathrm{kg})$            & 20                                     \\
+            rated side mounting payload $(\mathrm{kg})$       & 15                                     \\
+            noisy without payload $(\mathrm{db})$             & 79                                     \\
+            rated payload noisy $(\mathrm{db})$               & 70                                     \\
+            \textbf{acceleration } $(\mathrm{mm/s}^{2})$   & \textbf{500}                                    \\ \hline
+        \end{tabular}}%
+        \captionof{table}{스펙}
+        \label{Specification of Linear Actuator}
+    \end{minipage}
+\end{figure}
+
+
 \begin{table}[H]
     \centering
     \captionsetup{justification=centering}
@@ -136,20 +240,12 @@
 
 
 \begin{figure}[H]
-        \includegraphics[width=0.45\textwidth]{images/jopagi.jpg} 
-        %\includegraphics[width=0.465\textwidth]{images/gdb.jpg}
-        \includegraphics[width=0.55\textwidth]{images/wavemaker_control.png}
-    \caption{(a) 피스톤형 조파기의 구동부 모습과 (b) 조파기 전자 회로와 모터 드라이버, 전원장치를 연결한 모습}
-    \label{circuit}   
-    \begin{tikzpicture} [remember picture, overlay, anchor=north west, inner sep=0pt]
-        \node [%draw=yellow, 
-                text=yellow,
-                ] at (0.1, 3.5) {\scriptsize{(a)}};
-        \node [%draw=yellow, 
-                text=yellow,
-                ] at (3.5, 3.5) {\scriptsize{(b)}};
-    \end{tikzpicture}	 
-\end{figure} 
+    \centering
+        \includegraphics[width=0.8\textwidth]{images/jopagi.jpg} 
+    \caption{피스톤형 조파기의 구동부 모습}
+    \label{wavemaker-photo}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % \begin{figure}[H]
 % 	\begin{center}
@@ -159,19 +255,9 @@
 % 	\end{center}
 % \end{figure}
 
-%\subsubsection{제어부}
+\subsubsection{회로부}
+
 제어부는 틴지 보드 3.2와 DRV8825, Microstep Driver(ST-M5045), $48\mathrm{~V}$ SMPS(Switching Mode Power Supply)로 구성되어 있다. DRV8825와 ST-M5045는 모터 드라이버로 모터의 구동을 제어한다. DRV8825는 pcb 보드에 장착하는 스텝 모터 드라이버이며 ST-M5045 외장형 스텝모터 드라이버이다. SMPS는 변압기로 공급 전압을 높여주는 역할을 하며 36, 48V 변압기로 갈아끼울 수 있다. 틴지 보드 3.2는 메인 CPU 역할을 하며 코드를 실행한다.
-
-\begin{figure}[H]
-	\begin{center}
-		\includegraphics[height=5cm]{Schematic_Wave_maker_2-1_2022-11-24.pdf}
-		\includegraphics[height=5cm]{PCB_Wave_maker_2022-11-24.pdf}
-        \caption{조파기 전자 회로 설계와 제작한 pcb}
-		\label{PCB}
-	\end{center}
-\end{figure}
-
-각 소자를 편리하게 다루기 위하여 pcb를 설계하였다. 틴지 보드 3.2는 3.2$\mathrm{V}$의 구동 전압이 필요하며 상세 스펙은 다음과 같다(표 \ref{Specification of Teensy Board}).
 
 \begin{figure}[H]
     \centering
@@ -180,6 +266,7 @@
     \caption{틴지 보드의 핀 맵(pin map)}
     \label{fig:enter-label}
 \end{figure}
+
 
 \begin{table}[H]
     \centering
@@ -200,6 +287,50 @@
     \end{tabular}
     \label{Specification of Teensy Board}
 \end{table}
+
+
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[height=5cm]{Schematic_Wave_maker_2-1_2022-11-24.pdf}
+		\includegraphics[height=5cm]{PCB_Wave_maker_2022-11-24.pdf}
+        \caption{조파기 전자 회로 설계와 제작한 pcb}
+		\label{PCB}
+	\end{center}
+\end{figure}
+
+
+각 소자를 편리하게 다루기 위하여 pcb를 설계하였다. 틴지 보드 3.2는 3.2$\mathrm{V}$의 구동 전압이 필요하며 상세 스펙은 다음과 같다(표 \ref{Specification of Teensy Board}).
+
+
+
+\begin{table}[H]
+    \centering
+    \caption{조파기 전자 회로에 사용된 부품}
+    \label{Specification of Teensy Board}
+\begin{tabular}{l|llll}
+\hline
+ID & Name                             & \multicolumn{2}{l}{Designator}  & Quantity \\ \hline
+1  & 10nF                             & \multicolumn{2}{l}{C6,C4,C7,C5} & 4        \\
+2  & 470uF                            & \multicolumn{2}{l}{C1}          & 1        \\
+3  & 100uF                            & \multicolumn{2}{l}{C2,C3}       & 2        \\
+4  & USB-B                            & \multicolumn{2}{l}{CN1}         & 1        \\
+5  & 1N5822                           & \multicolumn{2}{l}{D4}          & 1        \\
+6  & LED-3mm                          & \multicolumn{2}{l}{LED1}        & 1        \\
+7  & DRV8825                          & \multicolumn{2}{l}{P1}          & 1        \\
+8  & 10KΩ                             & \multicolumn{2}{l}{R1}          & 1        \\
+9  & 5555165-1                        & \multicolumn{2}{l}{RJS}         & 1        \\
+10 & TEENSY\_3.2\_BASIC               & \multicolumn{2}{l}{U1}          & 1        \\
+11 & 6-pin                            & \multicolumn{2}{l}{U2}          & 1        \\
+12 & MTP125-1104S1                    & \multicolumn{2}{l}{U8}          & 1        \\
+13 & DC\_Connector\_5.5x2.1\_PC-GK2.1 & \multicolumn{2}{l}{U9}          & 1        \\
+14 & LM7805EE                         & \multicolumn{2}{l}{U10}         & 1        \\
+15 & SSD1306-128x64-OLED-0.96         & \multicolumn{2}{l}{PCB1}        & 1        \\
+16 & Momentary Switch                 & \multicolumn{2}{l}{S1,S2,S3,S4} & 4       
+\\ \hline
+\end{tabular}
+\end{table}
+
 
 ST-M5045는 리니어 액츄에이터의 모터를 조절하는 모터 드라이버이며 옆의 스위치의 조작에 따라서 스텝 수와 전류 값을 조절하여 외부적으로도 모터 회전의 감도를 바꿀 수 있다.
 
@@ -235,7 +366,7 @@ ST-M5045는 리니어 액츄에이터의 모터를 조절하는 모터 드라이
 
 %Teensy Board 3.2, ST-M5045 스펙을 집어넣을 것.
 %핀 연결은 Schematic이 있으니 굳이 따로 쓰지 말도록 하자.
-코딩은 Arduino를 틴지 보드에 적용할 수 있도록 컴파일러를 수정한 Teensyduino를 이용하였다. 기본적인 이동 코드는 전진, 후진이다. 스텝 모터 라이브러리는 AccelStepper, Stepper 등이 있으나 틴지 보드에서는 TeensyStep으로 모터를 더 빠르게 구동할 수 있었다. 버튼과 연계하여 각 버튼을 누를 때마다 왼쪽, 오른쪽으로 특정 변위만큼 이동하도록 할 수 있고 이를 반복하면 sin 파에 근접한 파를 만들 수 있다. 하지만 이는 근사적인 것이고 직접 변위를 대입하는 방식으로 코드를 짜서 조파기를 구동하였다.
+
 
 % 하지만 파의 운동을 분석해보면 sin 파에 근접한 것이며 sin형으로 운동하도록 속도를 대입한 결과 판이 이상하게 운동하였다(그림 \ref{Motion of Motor}). 그리하여 제대로 sin형으로 운동할 수 있도록 다른 코드를 짰다. 조파기의 스텝 모터는 400 step 회전 시 $1~\rm{cm}$ 전진한다.
 
@@ -247,3 +378,26 @@ ST-M5045는 리니어 액츄에이터의 모터를 조절하는 모터 드라이
 %     \label{Motion of Motor}
 % \end{figure}
 
+
+\begin{figure}[H]
+        \includegraphics[width=0.9\textwidth]{images/wavemaker_control.png}
+    \caption{조파기 전자 회로와 모터 드라이버, 전원장치를 연결한 모습}
+    \label{wavemaker-structure}   
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection{소프트웨어}
+코딩은 Arduino를 틴지 보드에 적용할 수 있도록 컴파일러를 수정한 Teensyduino를 이용하였다. 기본적인 이동 코드는 전진, 후진이다. 스텝 모터 라이브러리는 AccelStepper, Stepper 등이 있으나 틴지 보드에서는 TeensyStep으로 모터를 더 빠르게 구동할 수 있었다. 버튼과 연계하여 각 버튼을 누를 때마다 왼쪽, 오른쪽으로 특정 변위만큼 이동하도록 할 수 있고 이를 반복하면 sin 파에 근접한 파를 만들 수 있다. 하지만 이는 근사적인 것이고 직접 변위를 대입하는 방식으로 코드를 짜서 조파기를 구동하였다.
+
+\begin{figure}[H]
+            \includegraphics[trim=10 1050 100 0, clip, width=0.24\textwidth, height=3cm]{images/OLED1.png} 
+            % (왼쪽, 아래(), 오른쪽, 위(숫자가 클수록 위에서 많이 잘림) )
+            \includegraphics[trim=100 1550 100 0, clip, width=0.24\textwidth, height=3cm]{images/OLED2.png}
+            \includegraphics[trim=30 950 150 0,clip, width=0.24\textwidth, height=3cm]{images/OLED3.png}
+            \includegraphics[trim=30 950 100 0, clip, width=0.24\textwidth, height=3cm]{images/OLED4.png}
+        \caption{디스플레이 메뉴 동작 모습}
+        \label{Oled}   
+    \end{figure} 
+    
+전원을 켜면 Initialize가 실행된 후 메뉴 화면이 호출된다. 메뉴의 목록은 n진 트리의 형태로 구성되어 있으며, Wave 항목 아래에 Regular Wave, Irregular Wave, Button이 있고 각각을 버튼을 이용해 누르면 그 아래의 항목들이 호출되는 형태이다. Sin Wave의 항목에서는 변수 값을 선택해 원하는 값의 균형파를 생성할 수 있고, Button 항목에서는 원하는 방향으로 판을 움직일 수 있다.
