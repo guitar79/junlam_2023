@@ -236,7 +236,7 @@
 % Margin
 \setlength{\baposter@finalmargin}{2.2cm} %원래 1.5였음.
 \DeclareOptionX{fontscale}[0.292]{\renewcommand{\baposter@fontscale}{#1}}
-\DeclareOptionX{margin}   [1.5cm]{\setlength{\baposter@finalmargin}{#1}}
+\DeclareOptionX{margin}   [1.5cm]{\setlength{\baposter@finalmargin}{#1}} %[1.5cm]
 
 % move text/poster body to the right (or to the left if negative)
 \newlength{\baposter@movebody}
@@ -270,6 +270,7 @@
 \setlength{\baposter@basemarginleft}{\baposter@basemargin}
 \addtolength{\baposter@basemarginleft}{\baposter@fontscale\baposter@movebody}
 
+%check! BasePaperheight set here
 \typeout{Paperwidth=\the\baposter@finalpaperwidth}
 \typeout{Paperheight=\the\baposter@finalpaperheight}
 \typeout{BasePaperwidth=\the\baposter@basepaperwidth}
