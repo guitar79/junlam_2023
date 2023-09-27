@@ -305,7 +305,7 @@
 				\node(name) at (75mm, 35mm) {\fontsize{13pt}{13pt}\selectfont \@studentnames };
 				\node(student) at (21mm, 25mm) {\fontsize{13pt}{13pt}\selectfont 지도교원};
                     \node(name) at (75mm, 25mm) {\fontsize{13pt}{13pt}\selectfont \@advisor };
-				\node(teacher) at (21mm, 15mm) {\fontsize{13pt}{13pt}\selectfont 출품분야};
+				\node(teacher) at (21mm, 15mm) {\fontsize{13pt}{13pt}\selectfont 구    분};
                 \node(name) at (75mm, 15mm) {\fontsize{13pt}{13pt}\selectfont \@entryfield };
                 \node(teacher) at (21mm, 5mm) {\fontsize{13pt}{13pt}\selectfont 출품부분};
                 \node(name) at (75mm, 5mm) {\fontsize{13pt}{13pt}\selectfont \@entrysection };
